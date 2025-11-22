@@ -1,0 +1,83 @@
+.dropdown-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.dropdown-button {
+  background-color: rgba(50, 50, 50, 0.8);
+  border: none;
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-button:hover {
+  background-color: rgba(30, 30, 30, 0.9);
+  transform: scale(1.05);
+}
+
+.dropdown-button:active {
+  transform: scale(0.95);
+}
+
+.menu-icon {
+  color: #F0EEE6;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 56px;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  min-width: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(50, 50, 50, 0.1);
+}
+
+.dropdown-item:active {
+  background-color: rgba(50, 50, 50, 0.2);
+}
+
+.dropdown-item + .dropdown-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
