@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Dropdown.css';
 
-const Dropdown = () => {
+const Dropdown = ({ onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -9,7 +9,7 @@ const Dropdown = () => {
   };
 
   const handleMenuClick = (animation) => {
-    console.log(`Selected animation: ${animation}`);
+    onSelect(animation);
     setIsOpen(false);
   };
 
@@ -25,14 +25,14 @@ const Dropdown = () => {
 
       {isOpen && (
         <div className="dropdown-menu">
+          <button className="dropdown-item" onClick={() => handleMenuClick('meta-animation')}>
+            Meta Animation
+          </button>
           <button className="dropdown-item" onClick={() => handleMenuClick('tethered-flow')}>
             Tethered Flow
           </button>
-          <button className="dropdown-item" onClick={() => handleMenuClick('particle-system')}>
-            Particle System
-          </button>
-          <button className="dropdown-item" onClick={() => handleMenuClick('wave-motion')}>
-            Wave Motion
+          <button className="dropdown-item" onClick={() => handleMenuClick('canyon-multi-layer')}>
+            Canyon Multi Layer
           </button>
         </div>
       )}

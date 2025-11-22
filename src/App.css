@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
 }
 
 html, body, #root {
@@ -17,4 +20,21 @@ html, body, #root {
   justify-content: center;
   align-items: center;
   background-color: #F0EEE6;
+  position: relative;
+}
+
+.site-title {
+  position: fixed;
+  top: 30px;
+  left: 50px;
+  font-size: 24px;
+  color: rgba(50, 50, 50, 0.7);
+  z-index: 1000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.site-title:hover {
+  color: rgba(50, 50, 50, 1);
 }
